@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #funnyButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        #funnyButton:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="funnyButton">Click me</button>
+    <script>
+        const audio = new Audio('https://www.dropbox.com/scl/fi/3pl2jjxe2offx6uniszqe/DJ-Airhorn.mp3?dl=1');
+
+        document.getElementById('funnyButton').addEventListener('click', function() {
+            audio.play().catch(error => {
+                console.error('Error playing audio:', error);
+            });
+
+            // Display a humorous message
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
